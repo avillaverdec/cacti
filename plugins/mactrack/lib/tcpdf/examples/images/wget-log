@@ -1,0 +1,85 @@
+--2015-04-30 12:28:09--  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 187477 (183K) [image/jpeg]
+Grabando a: “logoUrjc.jpg.1”
+
+ 1% [=>                                                                                                                                                          ] 2.581       --.-K/s  T.E. 20h 22m 1% [=>                                                                                                                                                          ] 2.581       --.-K/s   en 17m 4s  
+
+2015-04-30 12:45:21 (2,52 B/s) - Error de lectura en el byte 2581/187477 (Expiró el tiempo de conexión). Reintentando.
+
+--2015-04-30 12:45:22--  (intento: 2)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:46:27--  (intento: 3)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:47:33--  (intento: 4)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:48:40--  (intento: 5)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:49:48--  (intento: 6)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:50:57--  (intento: 7)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:52:08--  (intento: 8)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:53:19--  (intento: 9)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:54:31--  (intento:10)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:55:44--  (intento:11)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:56:57--  (intento:12)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:58:10--  (intento:13)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 12:59:23--  (intento:14)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 13:00:36--  (intento:15)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... falló: Expiró el tiempo de conexión.
+Reintentando.
+
+--2015-04-30 13:01:49--  (intento:16)  http://212.128.0.56/logoUrjc.jpg
+Conectando con 212.128.0.56:80... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 187477 (183K) [image/jpeg]
+Grabando a: “logoUrjc.jpg.1”
+
+     0K .......... .......... .......... .......... .......... 27% 7,09M 0s
+    50K .......... .......... .......... .......... .......... 54% 11,2M 0s
+   100K .......... .......... .......... .......... .......... 81% 11,2M 0s
+   150K .......... .......... .......... ...                  100% 11,6M=0,02s
+
+2015-04-30 13:01:49 (9,72 MB/s) - “logoUrjc.jpg.1” guardado [187477/187477]
+
+--2015-04-30 13:01:49--  http://logourjc.jpg/
+Resolviendo logourjc.jpg (logourjc.jpg)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo “logourjc.jpg”
+FINISHED --2015-04-30 13:01:49--
+Total wall clock time: 33m 41s
+Downloaded: 1 files, 183K in 17m 4s (183 B/s)

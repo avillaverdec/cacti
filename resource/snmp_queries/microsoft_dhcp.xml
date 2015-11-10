@@ -1,0 +1,31 @@
+<interface>
+	<name>Get DHCP Info</name>
+	<description>Retrieves DHCP info from Microsoft server</description>
+	<oid_index>.1.3.6.1.4.1.311.1.3.2.1.1</oid_index>
+	<oid_index_parse>OID/REGEXP:.*\.([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})$</oid_index_parse>
+	<index_order_type>numeric</index_order_type>
+	<fields>
+		<subnetAdd>
+			<name>Index_Subnet_Address</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>input</direction>
+			<oid>.1.3.6.1.4.1.311.1.3.2.1.1.1</oid>
+		</subnetAdd>
+		<noAddInUse>
+			<name>In_Use</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.311.1.3.2.1.1.2</oid>
+		</noAddInUse>
+		<noAddFree>
+			<name>Free</name>
+			<method>walk</method>
+			<source>value</source>
+			<direction>output</direction>
+			<oid>.1.3.6.1.4.1.311.1.3.2.1.1.3</oid>
+		</noAddFree>
+	</fields>
+</interface>
+		

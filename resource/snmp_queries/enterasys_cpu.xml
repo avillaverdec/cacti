@@ -1,0 +1,44 @@
+<interface>
+        <name>Enterasys CPU Average Load</name>
+        <description>Queries an enterasys switch for a list of CPU instances and corresponding 5sec, 1min and 5min averages</description>
+        <oid_index>.1.3.6.1.4.1.5624.1.2.49.1.1.1.1</oid_index>
+        <oid_index_parse>OID/REGEXP:.*\.(7[0-9]\.1)$</oid_index_parse>
+
+        <fields>
+                <cpuIndex>
+                        <name>Index</name>
+                        <method>walk</method>
+                        <source>index</source>
+                        <direction>input</direction>                  
+                </cpuIndex>
+                <slot>
+                        <name>CPU Slot</name>
+                        <method>walk</method>
+                        <source>OID/REGEXP:.*\.7([0-9])\.1$</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.4.1.5624.1.2.49.1.1.1.1.4</oid>
+                </slot>
+                <cpuLoad5sec>
+                        <name>cpuLoad5sec</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.5624.1.2.49.1.1.1.1.2</oid>                      
+                </cpuLoad5sec>
+                <cpuLoad1min>
+                        <name>cpuLoad1min</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.5624.1.2.49.1.1.1.1.3</oid>
+                </cpuLoad1min>
+                <cpuLoad5min>
+                        <name>cpuLoad5min</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.5624.1.2.49.1.1.1.1.4</oid>
+                </cpuLoad5min>
+
+        </fields>
+</interface>

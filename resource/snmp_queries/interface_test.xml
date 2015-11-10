@@ -1,0 +1,15 @@
+<interface>
+	<name>Get Env Sensors</name>
+	<description>Queries a host for environment data</description>
+	<oid_index>1.3.6.1.4.1.52.4.1.1.8.1.1</oid_index>
+
+	<fields>
+	<chEnvAmbientTemp>
+	    <name>chEnvAmbientTemp</name>
+	    <method>walk</method>
+	    <source>value</source>
+	    <direction>input</direction>
+	    <oid>1.3.6.1.4.1.52.4.1.1.8.1.1.0</oid>
+	</chEnvAmbientTemp>
+	</fields>
+</interface>

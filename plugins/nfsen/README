@@ -1,0 +1,68 @@
+/*
+ +-------------------------------------------------------------------------+
+ | Copyright (C) 2004-2009 The Cacti Group                                 |
+ |                                                                         |
+ | This program is free software; you can redistribute it and/or           |
+ | modify it under the terms of the GNU General Public License             |
+ | as published by the Free Software Foundation; either version 2          |
+ | of the License, or (at your option) any later version.                  |
+ |                                                                         |
+ | This program is distributed in the hope that it will be useful,         |
+ | but WITHOUT ANY WARRANTY; without even the implied warranty of          |
+ | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           |
+ | GNU General Public License for more details.                            |
+ +-------------------------------------------------------------------------+
+ | Cacti: The Complete RRDTool-based Graphing Solution                     |
+ +-------------------------------------------------------------------------+
+ | This code is designed, written, and maintained by the Cacti Group. See  |
+ | about.php and/or the AUTHORS file for specific developer information.   |
+ +-------------------------------------------------------------------------+
+ | http://www.cacti.net/                                                   |
+ +-------------------------------------------------------------------------+
+*/
+/*******************************************************************************
+
+    Author ......... Author example
+    Contact ........ example@example.net
+    Home Site ...... http://example.net
+    Program ........ plgexample "plugin example"
+    Version ........ 0.1
+    Purpose ........ Example for plugins 
+*******************************************************************************/
+
+
+----[ Purpose
+
+    This plugin allows ...................
+
+
+----[ Features
+
+    You can .................
+
+
+----[ Installation
+
+    To install ...............
+
+    On cacti server, click on "configuration"'s menu option "Plugin Management".
+
+    You can find the plugin settings under the ??? tab.
+
+
+----[ Possible Bugs?
+   
+    ...............
+
+
+----[ Future Changes
+    
+	..........................
+
+
+----[ Changelog
+     --- 0.2 ---
+	
+     --- 0.1 ---
+			     Creation
+           Initial release

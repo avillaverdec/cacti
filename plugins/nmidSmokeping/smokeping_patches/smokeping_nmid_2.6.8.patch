@@ -1,0 +1,44 @@
+--- smokeping/lib/Smokeping.pm	2014-07-20 09:09:07.786922443 -0700
++++ smokeping-new/lib/Smokeping.pm	2014-07-20 09:08:44.770808242 -0700
+@@ -1047,6 +1047,11 @@
+     my $tree = shift;
+     my $open = shift;
+     my $mode = shift || $q->param('displaymode') || 's';
++    my $orig_heigth = $cfg->{Presentation}{detail}{height};
++    my $orig_width = $cfg->{Presentation}{detail}{width};
++    $cfg->{Presentation}{detail}{height} = $q->param('height') || $orig_heigth;
++    $cfg->{Presentation}{detail}{width} = $q->param('width') || $orig_width;
++    my $hide_legend = $q->param('hide');
+     $mode =~ s/[<>&%]/./g; 
+     my $phys_tree = $tree;
+     my $phys_open = $open;    
+@@ -1155,7 +1160,7 @@
+ 
+ 	$q->param('epoch_start',parse_datetime($q->param('start')));
+ 	$q->param('epoch_end',parse_datetime($q->param('end')));
+-        @tasks = (["Navigator Graph".$name, parse_datetime($q->param('start')),parse_datetime($q->param('end'))]);
++        @tasks = ([$tree->{title}.$name, parse_datetime($q->param('start')),parse_datetime($q->param('end'))]);
+         my ($graphret,$xs,$ys) = RRDs::graph
+           ("dummy", 
+            '--start', $tasks[0][1],
+@@ -1361,6 +1366,12 @@
+             push @log, "--logarithmic" if  $cfg->{Presentation}{detail}{logarithmic} and
+             $cfg->{Presentation}{detail}{logarithmic} eq 'yes';
+         
++	    my @legend = ();
++	    if ( $hide_legend ) {
++	            @legend= ('--no-legend');
++            }
++
++
+             my @lazy =();
+             @lazy = ('--lazy') if $mode eq 's' and $lastheight{$s} and $lastheight{$s}{$start} and $lastheight{$s}{$start} == $max->{$s}{$start};
+             my $timer_start = time();
+@@ -1376,6 +1387,7 @@
+                '--rigid',
+                '--upper-limit', $max->{$s}{$start},
+                @log,
++	       @legend,
+                '--lower-limit',(@log ? ($max->{$s}{$start} > 0.01) ? '0.001' : '0.0001' : '0'),
+                '--vertical-label',$ProbeUnit,
+                '--imgformat','PNG',

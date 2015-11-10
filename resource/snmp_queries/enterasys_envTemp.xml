@@ -1,0 +1,14 @@
+<interface>
+        <name>Enterasys Environment Temperature</name>
+        <description>Queries an enterasys switch for the ambient temperature of the room in which the chassis is located</description>
+	<oid_index>.1.3.6.1.4.1.52.4.1.1.8.1.1</oid_index>
+        <fields>
+                <envTemp>
+                        <name>envTemp</name>
+                        <method>get</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.4.1.52.4.1.1.8.1.1</oid>                      
+                </envTemp>
+        </fields>
+</interface>

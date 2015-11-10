@@ -1,0 +1,42 @@
+--- smokeping/lib/Smokeping.pm	2013-03-04 05:16:57.000000000 -0800
++++ smokeping-new/lib/Smokeping.pm	2014-07-20 09:10:36.311444961 -0700
+@@ -1052,6 +1052,11 @@
+     my $tree = shift;
+     my $open = shift;
+     my $mode = shift || $q->param('displaymode') || 's';
++    my $orig_heigth = $cfg->{Presentation}{detail}{height};
++    my $orig_width = $cfg->{Presentation}{detail}{width};
++    $cfg->{Presentation}{detail}{height} = $q->param('height') || $orig_heigth;
++    $cfg->{Presentation}{detail}{width} = $q->param('width') || $orig_width;
++    my $hide_legend = $q->param('hide');
+     $mode =~ s/$xssBadRx/_/g; 
+     my $phys_tree = $tree;
+     my $phys_open = $open;    
+@@ -1160,7 +1165,7 @@
+ 
+ 	$q->param('epoch_start',parse_datetime($q->param('start')));
+ 	$q->param('epoch_end',parse_datetime($q->param('end')));
+-    my $title = $q->param('title') || ("Navigator Graph".$name);
++    my $title = $q->param('title') || ($tree->{title}.$name);
+     @tasks = ([$title, parse_datetime($q->param('start')),parse_datetime($q->param('end'))]);
+         my ($graphret,$xs,$ys) = RRDs::graph
+           ("dummy", 
+@@ -1367,6 +1372,10 @@
+             push @log, "--logarithmic" if  $cfg->{Presentation}{detail}{logarithmic} and
+             $cfg->{Presentation}{detail}{logarithmic} eq 'yes';
+         
++	    my @legend = ();
++	    if ( $hide_legend ) {
++		@legend= ('--no-legend');
++ 	    }
+             my @lazy =();
+             @lazy = ('--lazy') if $mode eq 's' and $lastheight{$s} and $lastheight{$s}{$start} and $lastheight{$s}{$start} == $max->{$s}{$start};
+             my $timer_start = time();
+@@ -1382,6 +1391,7 @@
+                '--rigid',
+                '--upper-limit', $max->{$s}{$start},
+                @log,
++	       @legend,
+                '--lower-limit',(@log ? ($max->{$s}{$start} > 0.01) ? '0.001' : '0.0001' : '0'),
+                '--vertical-label',$ProbeUnit,
+                '--imgformat','PNG',
