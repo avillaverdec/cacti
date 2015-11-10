@@ -152,7 +152,7 @@ if (!$sound && $host_down)
 if ($host_down) {
 	$render_down_host_message = 0;
 	$down_host_message = '';
-	$down_host_message .= '<br><br><center><h2>Equipos ca&iacute;dos</h2><table cellspacing=0 cellpadding=1 bgcolor=black><tr><td><table bgcolor=white width="100%">';
+	$down_host_message .= '<center><h2>Equipos ca&iacute;dos</h2><table cellspacing=0 cellpadding=1 bgcolor=black><tr><td><table bgcolor=white width="100%">';
 	foreach ($chosts as $id) {
 		$message = db_fetch_row("select hostname, description, monitor_text from host where id=$id");
 		$message['monitor_text'] = str_replace("\n", '<br>', $message['monitor_text']);
