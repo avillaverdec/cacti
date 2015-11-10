@@ -149,6 +149,25 @@ if ($sound && $host_down)
 if (!$sound && $host_down)
 	print '<center><b>Alerting has been disabled by the client!</b></center><br>';
 
+if ($host_down) {
+	$render_down_host_message = 0;
+	$down_host_message = '';
+	$down_host_message .= '<br><br><center><h2>Equipos ca&iacute;dos</h2><table cellspacing=0 cellpadding=1 bgcolor=black><tr><td><table bgcolor=white width="100%">';
+	foreach ($chosts as $id) {
+		$message = db_fetch_row("select hostname, description, monitor_text from host where id=$id");
+		$message['monitor_text'] = str_replace("\n", '<br>', $message['monitor_text']);
+
+		if ($message['monitor_text'] != '') {
+			$render_down_host_message = 1;
+			$down_host_message .= '<tr><td><b>' . $message['description'] . ' (' . $message['hostname'] . ')</b> - </td><td>' . $message['monitor_text'] . '</td></tr>';
+		}
+	}
+	$down_host_message .= '</table></td></tr></table></center>';
+	if ($render_down_host_message) {
+		print $down_host_message;
+	}
+}
+
 print "<center><table border=0 cellspacing=3>\n";
 
 //if ($host_down) {
