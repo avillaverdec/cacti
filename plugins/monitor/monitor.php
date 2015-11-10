@@ -144,7 +144,7 @@ print '<center>Last Refresh : ' . date('g:i:s a', time()) . '</center><br>';
 
 // If the sound is on, and a host is down, show the button to silence it
 if ($sound && $host_down)
-	print "<center><form action='" . $config['url_path'] . "plugins/monitor/monitor.php' method=POST><input type=hidden name=sound value='off'><input type='submit' name='button_nosound_x' value='Mute'></center></form><br>";
+	print "<center><form action='" . $config['url_path'] . "plugins/monitor/monitor.php' method=POST><input type=hidden name=sound value='off'><input type='submit' name='button_nosound_x' value='Mute'></center></form>";
 
 if (!$sound && $host_down)
 	print '<center><b>Alerting has been disabled by the client!</b></center><br>';
