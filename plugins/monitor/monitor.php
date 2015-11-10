@@ -162,7 +162,7 @@ if ($host_down) {
 			$down_host_message .= '<tr><td><b>' . $message['description'] . ' (' . $message['hostname'] . ')</b> - </td><td>' . $message['monitor_text'] . '</td></tr>';
 		}
 	}
-	$down_host_message .= '</table></td></tr></table></center>';
+	$down_host_message .= '</table></td></tr></table></center><br><br>';
 	if ($render_down_host_message) {
 		print $down_host_message;
 	}
